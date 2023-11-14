@@ -17,13 +17,13 @@ jobs:
           - suffix:
             cmake_args: ""
           - suffix: -openblas
-            cmake_args: "-DLLAMA_BLAS=ON -DLLAMA_BLAS_VENDOR=OpenBLAS"
+            cmake_args: "-DLLAMA_BLAS=ON -DLLAMA_BLAS_VENDOR=OpenBLAS -DDYNAMIC_ARCH=TRUE"
           - suffix: -cublas
             cmake_args: "-DLLAMA_CUBLAS=on"
           - suffix: -clblast
             cmake_args: "-DLLAMA_CLBLAST=on"
           - suffix: -hipblas
-            cmake_args: "-DLLAMA_HIPBLAS=on"
+            cmake_args: "-DLLAMA_HIPBLAS=on"         
     steps:
       - name: Checkout
         uses: actions/checkout@v3
