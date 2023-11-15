@@ -7,7 +7,7 @@ ENV FORCE_CMAKE "1"
 ARG CMAKE_ARGS
 ENV CMAKE_ARGS=${CMAKE_ARGS:-""}
 
-RUN pip install --no-cache-dir --upgrade -r requirements.txt
+RUN pip install --no-cache-dir --upgrade -r requirements.txt && FORCE_CMAKE=1 pip install --upgrade llama-cpp-python
 
 COPY ./app /llm-api/app
 ENV PYTHONPATH "/llm-api"
